@@ -5,30 +5,41 @@
 // IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
 // WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-import "Menu.qml";
-import "HomePage.qml";
+import controls.Button;
+import controls.FocusablePanel;
 
-Application {
-		id: sudokuApplication;
-		name: "app";
-	
-		PageStack {
 
-			id: pageStack;
-	
-			HomePage {
-				onMenuEvent: {
-					log("onMenuEvent");
-					pageStack.currentIndex=1;
-				}
-			}
-
-			Menu {
-				id: menu;
-				onBackPressed: {
-					pageStack.currentIndex = 0;
-				}
-			}
+Item {
+		id: mainMenu;
+		focus: true;
+		
+		Image {
+			id: background;
+			anchors.horizontalCenter: safeArea.horizontalCenter;
+			anchors.verticalCenter: safeArea.verticalCenter;
+			source: "apps/StingrayMeditation/img/HomeBackground.png";
 		}
 
+		signal MenuEvent();
+
+		FocusablePanel {
+
+			id: menuButton;
+			anchors.horizontalCenter: safeArea.horizontalCenter;
+			anchors.verticalCenter: safeArea.verticalCenter;
+			width: 250;
+			height: 50;
+			BodyText {
+				id: txt;
+				anchors.horizontalCenter: safeArea.horizontalCenter;
+				anchors.verticalCenter: safeArea.verticalCenter;
+				color: "#581B18";
+				text:"Help1 me pls";
+			}
+			onSelectPressed: {
+				log("MenuButton PRESSED!");
+				parent.MenuEvent();
+			}
+		}
 }
+

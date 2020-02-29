@@ -1,9 +1,1 @@
-{
-    "id": "StingrayMeditation",
-    "display": { 
-        "name":
-            "Meditation"
-    },
-    "application": {}, "version": 1
-}
-
+{"id": "StingrayMeditation", "display": {"name": "Windows"}, "application": {}, "version": 1, "depends": ["controls"]}

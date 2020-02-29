@@ -5,30 +5,29 @@
 // IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
 // WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-import "Menu.qml";
-import "HomePage.qml";
+import controls.Edit;
 
-Application {
-		id: sudokuApplication;
-		name: "app";
-	
-		PageStack {
+Item{
+	height:650;
+	width:1250;
+	focus: true;
+	Image {
+		id: background;
+		anchors.horizontalCenter: safeArea.horizontalCenter;
+		anchors.verticalCenter: safeArea.verticalCenter;
+		source: "apps/StingrayMeditation/img/MenuBackground.png";
+	}
 
-			id: pageStack;
-	
-			HomePage {
-				onMenuEvent: {
-					log("onMenuEvent");
-					pageStack.currentIndex=1;
-				}
-			}
+	Button {
+ 		id: pressMeButton;
+    		property int counter;
 
-			Menu {
-				id: menu;
-				onBackPressed: {
-					pageStack.currentIndex = 0;
-				}
-			}
+	   	anchors.centerIn: parent;
+	    	text: "PRESS ME";
+
+	    	onSelectPressed: {
+	      		pressMeButton.counter = pressMeButton.counter + 1;
+			error("Counter: " + pressMeButton.counter);
 		}
-
+	}
 }
