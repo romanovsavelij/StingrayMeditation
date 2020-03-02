@@ -9,13 +9,14 @@ Player {
 
     isFullscreen: true;
 
-    function playVideoByName(videoName) {
+    function playVideoById(videoId) {
         log("start loading!");
         meditationPlayer.abort();
-	log("aborted")
-        meditationPlayer.playUrl(constants.videos[videoName]);
-	log("playUrl completed")
+	log("aborted");
+	log(constants.videos[videoId].url);
+        meditationPlayer.playUrl(constants.videos[videoId].url);
+	log("playUrl completed");
 	meditationPlayer.setFocus();
-	log("plaVideoById completed")
+	log("plaVideoById completed");
     }
 }

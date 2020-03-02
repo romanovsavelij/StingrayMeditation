@@ -3,3 +3,5 @@ this.videos = [{ title: "Rain", url: "http://commondatastorage.googleapis.com/gt
                    { title: "Ужасы", url: "https://api.ivi.ru/mobileapi/videos/v5/?genre=99" },
                    { title: "Боевики", url: "https://api.ivi.ru/mobileapi/videos/v5/?genre=94" },
                    { title: "Мелодрамы", url: "https://api.ivi.ru/mobileapi/videos/v5/?genre=107" }];
+
+this.rainVideoId = 0;

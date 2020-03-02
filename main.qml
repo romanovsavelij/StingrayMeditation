@@ -21,7 +21,8 @@ Application {
         		error("Counter: " + pressMeButton.counter);
 			meditationPlayer.visible = true;
 			log("start watching!")
-			meditationPlayer.playVideoByName("Rain");	
+			log(constants.rainVideoId);
+			meditationPlayer.playVideoById(constants.rainVideoId);	
    		}
 	
   	}
@@ -36,8 +37,8 @@ Application {
 
 		onBackPressed: {
 			log("player abort");
-			iviPlayer.abort();
-			iviPlayer.visible = false;
+			meditationPlayer.abort();
+			meditationPlayer.visible = false;
 			background.visible = true;
 			pressMeButton.visible = true;
 			pressMeButton.setFocus();
@@ -47,8 +48,8 @@ Application {
         }
 	
 	onVisibleChanged: {
-	        iviPlayer.abort();
-                iviPlayer.visible = false;
+	        meditationPlayer.abort();
+                meditationPlayer.visible = false;
 		log("onVisibleChanged: player was hide!");
 		pressMeButton.visible = true;
 		pressMeButton.setFocus();		
