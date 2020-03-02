@@ -19,16 +19,16 @@ Application {
     		onSelectPressed: {
       			pressMeButton.counter = pressMeButton.counter + 1;
         		error("Counter: " + pressMeButton.counter);
-			iviPlayer.visible = true;
+			meditationPlayer.visible = true;
 			log("start watching!")
-			iviPlayer.playVideoById(0);	
+			meditationPlayer.playVideoByName("Rain");	
    		}
 	
   	}
   	onStarted: { pressMeButton.setFocus(); }
 	
 	VideoPlayer {
-        	id: iviPlayer;
+        	id: meditationPlayer;
 
         	anchors.fill: safeArea;
 

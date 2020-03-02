@@ -3,19 +3,19 @@ import controls.Player;
 import "js/constants.js" as constants;
 
 Player {
-    id: iviPlayer;
+    id: meditationPlayer;
 
     focus: true;
 
     isFullscreen: true;
 
-    function playVideoById(id) {
+    function playVideoByName(videoName) {
         log("start loading!");
-        iviPlayer.abort();
+        meditationPlayer.abort();
 	log("aborted")
-        iviPlayer.playUrl("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4");
+        meditationPlayer.playUrl(constants.videos[videoName]);
 	log("playUrl completed")
-	iviPlayer.setFocus();
+	meditationPlayer.setFocus();
 	log("plaVideoById completed")
     }
 }
