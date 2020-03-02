@@ -7,6 +7,7 @@
 
 import controls.Edit;
 import "MenuButton.qml";
+import "VideoPlayer.qml";
 
 Item{
 	height:650;
@@ -29,22 +30,34 @@ Item{
 	      
 		MenuButton {
 		  label: "Дождь";
-	    imagePath: "apps/StingrayMeditation/img/rain.png"
+	    imagePath: "apps/StingrayMeditation/img/rain.png";
+			onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.rainVideoId);
+                  }
 		}
 
       MenuButton {
         label: "Природа";
-        imagePath: "apps/StingrayMeditation/img/tree.png"
+        imagePath: "apps/StingrayMeditation/img/tree.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.natureVideoId);
+                  }
       }
 
       MenuButton {
         label: "Камин";
-        imagePath: "apps/StingrayMeditation/img/fire.png"
+        imagePath: "apps/StingrayMeditation/img/fire.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.fireVideoId);
+                  }
       }
 
       MenuButton {
         label: "Птицы";
-        imagePath: "apps/StingrayMeditation/img/bird.png"
+        imagePath: "apps/StingrayMeditation/img/bird.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.birdsVideoId);
+                  }
       }
 
       spacing: 120;
@@ -56,21 +69,53 @@ Item{
 
 	      MenuButton {
 	        label: "Piano";
-	        imagePath: "apps/StingrayMeditation/img/piano.png"
+	        imagePath: "apps/StingrayMeditation/img/piano.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.pianoVideoId);
+                  }
 	      }
 
 	      MenuButton {
 	        label: "Водопад";
-	        imagePath: "apps/StingrayMeditation/img/waterfall.png"
+	        imagePath: "apps/StingrayMeditation/img/waterfall.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.waterfallVideoId);
+                  }
 	      }
 
 	      MenuButton {
 	        label: "Ветер";
-	        imagePath: "apps/StingrayMeditation/img/wind.png"
+	        imagePath: "apps/StingrayMeditation/img/wind.png";
+                        onSelectPressed: {
+                        meditationPlayer.playVideoById(constants.windVideoId);
+                  }
 	      }
 
 	      spacing: 120;
 
 	    }
-	  }
+	}
+
+	VideoPlayer {
+                id: meditationPlayer;
+
+                anchors.fill: mainWindow;
+
+                visible: false;
+
+                onBackPressed: {
+                        log("player abort");
+                        meditationPlayer.abort();
+                        meditationPlayer.visible = false;
+                        log("player was hide!")
+                }
+
+        }
+
+        onVisibleChanged: {
+                meditationPlayer.abort();
+                meditationPlayer.visible = false;
+                log("onVisibleChanged: player was hide!");
+        }
+
 }

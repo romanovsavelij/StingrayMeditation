@@ -34,5 +34,4 @@ Column {
     text: menuButton.label;
     anchors.horizontalCenter: parent.horizontalCenter;
   }
-
 }
