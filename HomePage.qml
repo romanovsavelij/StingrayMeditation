@@ -22,24 +22,38 @@ Item {
 
 		signal MenuEvent();
 
+		//BodyText {
+		//	text: "Stingray Meditation";
+		//	color: "#fff";
+		//	anchors.horizontalCenter: safeArea.horizontalCenter;
+		//}
+
 		FocusablePanel {
 
 			id: menuButton;
 			anchors.horizontalCenter: safeArea.horizontalCenter;
 			anchors.verticalCenter: safeArea.verticalCenter;
-			width: 250;
-			height: 50;
-			BodyText {
-				id: txt;
-				anchors.horizontalCenter: safeArea.horizontalCenter;
-				anchors.verticalCenter: safeArea.verticalCenter;
-				color: "#581B18";
-				text:"Help1 me pls";
+			width: 180;
+			height: 180;
+			
+			color: active ? "#ddddff" : colorTheme.focusablePanelColor;
+			radius: 90;
+			Image {
+			  id: txt;
+			  source: "apps/StingrayMeditation/img/play.png";
+			  width: 180;
+			  height: 180;
+			  anchors.horizontalCenter: safeArea.horizontalCenter;
+			  anchors.verticalCenter: safeArea.verticalCenter;
 			}
+
 			onSelectPressed: {
 				log("MenuButton PRESSED!");
 				parent.MenuEvent();
 			}
 		}
+
+
+		
 }
 

@@ -6,6 +6,7 @@
 // WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 import controls.Edit;
+import "MenuButton.qml";
 
 Item{
 	height:650;
@@ -18,16 +19,58 @@ Item{
 		source: "apps/StingrayMeditation/img/MenuBackground.png";
 	}
 
-	Button {
- 		id: pressMeButton;
-    		property int counter;
+	Column {
+		anchors.centerIn: parent;
+    	spacing: 100;
+	    
+	    Row {
 
-	   	anchors.centerIn: parent;
-	    	text: "PRESS ME";
-
-	    	onSelectPressed: {
-	      		pressMeButton.counter = pressMeButton.counter + 1;
-			error("Counter: " + pressMeButton.counter);
+	      anchors.horizontalCenter: parent.horizontalCenter;
+	      
+		MenuButton {
+		  label: "Дождь";
+	    imagePath: "apps/StingrayMeditation/img/rain.png"
 		}
-	}
+
+      MenuButton {
+        label: "Природа";
+        imagePath: "apps/StingrayMeditation/img/tree.png"
+      }
+
+      MenuButton {
+        label: "Камин";
+        imagePath: "apps/StingrayMeditation/img/fire.png"
+      }
+
+      MenuButton {
+        label: "Птицы";
+        imagePath: "apps/StingrayMeditation/img/bird.png"
+      }
+
+      spacing: 120;
+
+	    }
+
+	    Row {
+	      anchors.horizontalCenter: parent.horizontalCenter;
+
+	      MenuButton {
+	        label: "Piano";
+	        imagePath: "apps/StingrayMeditation/img/piano.png"
+	      }
+
+	      MenuButton {
+	        label: "Водопад";
+	        imagePath: "apps/StingrayMeditation/img/waterfall.png"
+	      }
+
+	      MenuButton {
+	        label: "Ветер";
+	        imagePath: "apps/StingrayMeditation/img/wind.png"
+	      }
+
+	      spacing: 120;
+
+	    }
+	  }
 }
