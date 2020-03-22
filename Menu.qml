@@ -6,7 +6,6 @@ Item{
     height:650;
     width:1250;
     focus: true;
-
     Image {
         id: background;
         anchors.horizontalCenter: safeArea.horizontalCenter;
@@ -89,7 +88,18 @@ Item{
 
         }
     }
-
+    Edit{
+	height:70;
+	width:800;
+	//anchors.leftMargin: 400;
+	showBackground: false;
+	anchors.horizontalCenter: safeArea.horizontalCenter;
+   	BodyText {
+        	text: "Выберите пятиминутное видео";
+       		anchors.horizontalCenter: parent.horizontalCenter;
+		anchors.verticalCenter: parent.verticalCenter;
+   	}
+    }
     VideoPlayer {
         id: meditationPlayer;
         anchors.fill: mainWindow;
