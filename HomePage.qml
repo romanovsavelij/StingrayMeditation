@@ -32,24 +32,23 @@ Item {
             anchors.horizontalCenter: safeArea.horizontalCenter;
             anchors.verticalCenter: safeArea.verticalCenter;
         }
+
         onSelectPressed: {
             log("MenuButton PRESSED!");
             parent.MenuEvent();
         }
     }
     Edit{
-	height:200;
+        height:200;
 	width:1000;
-	//anchors.leftMargin: 400;
 	showBackground: false;
 	anchors.horizontalCenter: safeArea.horizontalCenter;
-   	BodyText {
-		//font.pixelSize: 200;
-        	text: "    Сядьте ровно, выпрямите спину. Дышите глубоко и спокойно. 
-                     Не думайте о проблемах, расслабьтесь.
-                          Когда будете готовы, нажмите ОК.";
-       		anchors.horizontalCenter: parent.horizontalCenter;
-		anchors.verticalCenter: parent.verticalCenter;
+   	SubheadText {
+            text: "    Сядьте ровно, выпрямите спину. Дышите глубоко и спокойно. 
+                       Не думайте о проблемах, расслабьтесь.
+                            Когда будете готовы, нажмите ОК.";
+       	    anchors.horizontalCenter: parent.horizontalCenter;
+	    anchors.verticalCenter: parent.verticalCenter;
    	}
     }   
 }
