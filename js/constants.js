@@ -1,10 +1,10 @@
-this.videos = [{ title: "Rain", url: "http://35.184.185.233/Rain.mp4" },
-                   { title: "Nature", url: "http://35.184.185.233/Nature.mp4" },
-                   { title: "Fire", url: "http://35.184.185.233/fireplace.mp4" },
-                   { title: "Birds", url: "http://35.184.185.233/Birds.mp4" },
-                   { title: "Piano", url: "http://35.184.185.233/Piano.mp4" },
-		   { title: "Waterfall", url: "http://35.184.185.233/Waterfall.mp4" },
-		   { title: "Wind", url: "http://35.184.185.233/Wind.mp4" }];
+this.videos = [{ title: "Rain", url: "https://stingrayphotos-d79f3.web.app/Rain.mp4" },
+                   { title: "Nature", url: "https://stingrayphotos-d79f3.web.app/Nature.mp4" },
+                   { title: "Fire", url: "https://stingrayphotos-d79f3.web.app/fireplace.mp4" },
+                   { title: "Birds", url: "https://stingrayphotos-d79f3.web.app/Birds.mp4" },
+                   { title: "Piano", url: "https://stingrayphotos-d79f3.web.app/Piano.mp4" },
+		   { title: "Waterfall", url: "https://stingrayphotos-d79f3.web.app/Waterfall.mp4" },
+		   { title: "Wind", url: "https://stingrayphotos-d79f3.web.app/Wind.mp4" }];
 
 this.rainVideoId = 0;
 this.natureVideoId = 1;
