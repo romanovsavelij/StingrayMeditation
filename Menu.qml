@@ -61,7 +61,7 @@ Item{
             anchors.horizontalCenter: parent.horizontalCenter;
 
             MenuButton {
-                label: "Piano";
+                label: "Фортепиано";
                 imagePath: "apps/StingrayMeditation/img/piano.png";
                 onSelectPressed: {
                     meditationPlayer.playVideoById(constants.pianoVideoId);
