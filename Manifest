@@ -1,6 +1,6 @@
 {
    	"id": "StingrayMeditation", 
-	"display": {"name": "Meditation", "icon": "icon.png"}, 
+	"display": {"name": "Meditation", "icon": "img/icon.png"}, 
 	"application": {}, 
 	"version": 1, 
 	"depends": ["controls"]
